@@ -1,0 +1,29 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "service_id": "18033099921-20180524131340_v66.89",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 0,
+            "sunday": 0,
+            "start_date": "2018-05-17T00:00:00.000Z",
+            "end_date": "2018-07-07T00:00:00.000Z"
+        },
+        {
+            "service_id": "12881116336-20180605110613_v67.1",
+            "monday": 1,
+            "tuesday": 1,
+            "wednesday": 1,
+            "thursday": 1,
+            "friday": 1,
+            "saturday": 0,
+            "sunday": 0,
+            "start_date": "2018-07-08T00:00:00.000Z",
+            "end_date": "2018-09-30T00:00:00.000Z"
+        }
+    ]
+}

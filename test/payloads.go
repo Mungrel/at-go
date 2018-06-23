@@ -5,6 +5,7 @@ import "io/ioutil"
 const (
 	partialPath = "payloads/"
 	agencies    = "agencies.json"
+	calendars   = "calendars.json"
 )
 
 func getJSON(fileName string) string {
