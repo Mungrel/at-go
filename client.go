@@ -6,7 +6,10 @@ import (
 	"net/http"
 )
 
-const baseURL = "https://api.at.govt.nz/v2"
+const (
+	baseURL      = "https://api.at.govt.nz"
+	apiKeyHeader = "Ocp-Apim-Subscription-Key"
+)
 
 type clientInterface interface {
 	Do(req *http.Request) (*http.Response, error)
@@ -31,6 +34,8 @@ func (c *Client) get(url string, result interface{}) error {
 	if err != nil {
 		return err
 	}
+
+	req.Header.Set(apiKeyHeader, c.APIKey)
 
 	resp, err := c.Client.Do(req)
 	if err != nil {

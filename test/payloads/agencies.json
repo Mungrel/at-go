@@ -1,0 +1,24 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "agency_id": "NZBGW",
+            "agency_name": "Go West",
+            "agency_url": "http://www.aucklandtransport.govt.nz",
+            "agency_timezone": "Pacific/Auckland",
+            "agency_lang": "en",
+            "agency_phone": "(09)355-3553",
+            "agency_fare_url": null
+        },
+        {
+            "agency_id": "SLPH",
+            "agency_name": "SeaLink Pine Harbour",
+            "agency_url": "http://www.aucklandtransport.govt.nz",
+            "agency_timezone": "Pacific/Auckland",
+            "agency_lang": "en",
+            "agency_phone": "(09)355-3553",
+            "agency_fare_url": null
+        }
+    ],
+    "error": null
+}
