@@ -25,6 +25,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newResponse(http.StatusOK, getJSON(agencies)), nil
 	}
 
+	if strings.Contains(url, "/v2/gtfs/calendar") {
+		return newResponse(http.StatusOK, getJSON(calendars)), nil
+	}
+
 	return nil, errors.New("Endpoint not mocked")
 }
 
