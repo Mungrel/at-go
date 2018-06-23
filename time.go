@@ -1,12 +1,10 @@
 package at
 
 import (
-	"fmt"
-	"strconv"
 	"time"
 )
 
-const layout = "2018-05-17T00:00:00.000Z"
+const layout = "2006-01-02T15:04:05.000Z"
 
 // Timestamp is an alias for time.Time
 type Timestamp time.Time
@@ -24,20 +22,19 @@ func NewTimestamp(dateTime string) *Timestamp {
 
 // MarshalJSON marshals a Timestamp into JSON
 func (t *Timestamp) MarshalJSON() ([]byte, error) {
-	ts := time.Time(*t).Unix()
-	stamp := fmt.Sprint(ts)
-
-	return []byte(stamp), nil
+	ts := time.Time(*t).Format(layout)
+	return []byte(ts), nil
 }
 
 // UnmarshalJSON unmarshals JSON into a Timestamp
 func (t *Timestamp) UnmarshalJSON(b []byte) error {
-	ts, err := strconv.Atoi(string(b))
+	b = b[1 : len(b)-1]
+	ts, err := time.Parse(layout, string(b))
 	if err != nil {
 		return err
 	}
 
-	*t = Timestamp(time.Unix(int64(ts), 0))
+	*t = Timestamp(ts)
 
 	return nil
 }

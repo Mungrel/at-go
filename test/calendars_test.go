@@ -16,7 +16,7 @@ func TestCalendars(t *testing.T) {
 	assert.NotNil(calendars)
 
 	expected := []*Calendar{
-		&Calendar{
+		{
 			ServiceID: "18033099921-20180524131340_v66.89",
 			Monday:    0,
 			Tuesday:   0,
@@ -28,7 +28,7 @@ func TestCalendars(t *testing.T) {
 			StartDate: NewTimestamp("2018-05-17T00:00:00.000Z"),
 			EndDate:   NewTimestamp("2018-07-07T00:00:00.000Z"),
 		},
-		&Calendar{
+		{
 			ServiceID: "12881116336-20180605110613_v67.1",
 			Monday:    1,
 			Tuesday:   1,
