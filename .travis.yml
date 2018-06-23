@@ -1,0 +1,12 @@
+language: go
+
+go:
+  - "1.10.x"
+
+script:
+ - go get -u github.com/alecthomas/gometalinter
+ - gometalinter --install
+ - gometalinter ./...
+ - go build ./...
+ - go test $(go list ./... | grep -v /vendor/)
+ 
