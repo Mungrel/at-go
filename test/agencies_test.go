@@ -16,7 +16,7 @@ func TestAgencies(t *testing.T) {
 	assert.NotNil(agencies)
 
 	expected := []*Agency{
-		&Agency{
+		{
 			ID:       "NZBGW",
 			Name:     "Go West",
 			URL:      "http://www.aucklandtransport.govt.nz",
@@ -25,7 +25,7 @@ func TestAgencies(t *testing.T) {
 			Phone:    "(09)355-3553",
 			FareURL:  "",
 		},
-		&Agency{
+		{
 			ID:       "SLPH",
 			Name:     "SeaLink Pine Harbour",
 			URL:      "http://www.aucklandtransport.govt.nz",
