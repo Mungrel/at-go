@@ -2,11 +2,11 @@
 A Go Wrapper for the Auckland Transport API
 
 [General Transit Feed (GTFS)](https://dev-portal.at.govt.nz/docs/services/gtfs/operations/580698de7d6df41584d3d0ce)
-- [ ] Agencies
+- [x] Agencies
 - [ ] Calendar by Service
 - [ ] Calendar Dates
 - [ ] Calendar Dates by Service
-- [ ] Calendars
+- [x] Calendars
 - [ ] Metadata
 - [ ] Routes
 - [ ] Routes by Location
