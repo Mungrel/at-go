@@ -7,6 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+const mockServiceID = "123456ABC"
+
 func TestCalendars(t *testing.T) {
 	mockATClient := newMockClient()
 	assert := assert.New(t)
@@ -43,4 +45,28 @@ func TestCalendars(t *testing.T) {
 	}
 
 	assert.Equal(expected, calendars)
+}
+
+func TestCalendarByService(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	calendar, err := mockATClient.CalendarByService(mockServiceID)
+	assert.Nil(err)
+	assert.NotNil(calendar)
+
+	expected := &Calendar{
+		ServiceID: "18033099921-20180524131340_v66.89",
+		Monday:    0,
+		Tuesday:   0,
+		Wednesday: 0,
+		Thursday:  0,
+		Friday:    0,
+		Saturday:  0,
+		Sunday:    0,
+		StartDate: NewTimestamp("2018-05-17T00:00:00.000Z"),
+		EndDate:   NewTimestamp("2018-07-07T00:00:00.000Z"),
+	}
+
+	assert.Equal(expected, calendar)
 }

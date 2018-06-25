@@ -7,7 +7,7 @@ A Go Wrapper for the [Auckland Transport API](https://dev-portal.at.govt.nz/docs
 - [x] Agencies
 - [ ] Calendar by Service
 - [ ] Calendar Dates
-- [ ] Calendar Dates by Service
+- [x] Calendar Dates by Service
 - [x] Calendars
 - [ ] Metadata
 - [ ] Routes
