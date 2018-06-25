@@ -1,6 +1,9 @@
 # at-go [![Build Status](https://travis-ci.org/Mungrel/at-go.svg?branch=master)](https://travis-ci.org/Mungrel/at-go)
 A Go Wrapper for the [Auckland Transport API](https://dev-portal.at.govt.nz/docs/services/)
 
+## Contributing
+Always keen to take contributions. Check out [Contributing](https://github.com/Mungrel/at-go/blob/master/CONTRIBUTING.md) for guidelines and tips on contributing.
+
 ## Endpoints
 
 [General Transit Feed (GTFS)](https://dev-portal.at.govt.nz/docs/services/gtfs/operations/580698de7d6df41584d3d0ce)
