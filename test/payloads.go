@@ -9,6 +9,7 @@ const (
 	calendarByService      = "calendar_by_service.json"
 	calendarDates          = "calendar_dates.json"
 	calendarDatesByService = "calendar_dates_by_service.json"
+	metadata               = "metadata.json"
 )
 
 func getJSON(fileName string) string {

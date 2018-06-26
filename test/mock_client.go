@@ -43,6 +43,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newResponse(http.StatusOK, getJSON(calendarDatesByService)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/gtfs/metadata") {
+		return newResponse(http.StatusOK, getJSON(metadata)), nil
+	}
+
 	return nil, errors.New("Endpoint not mocked")
 }
 
