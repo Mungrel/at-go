@@ -7,8 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-const mockServiceID = "123456ABC"
-
 func TestCalendars(t *testing.T) {
 	mockATClient := newMockClient()
 	assert := assert.New(t)
