@@ -10,7 +10,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [x] Agencies
 - [x] Calendar by Service
 - [x] Calendar Dates
-- [ ] Calendar Dates by Service
+- [x] Calendar Dates by Service
 - [x] Calendars
 - [ ] Metadata
 - [ ] Routes

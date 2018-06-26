@@ -32,3 +32,21 @@ func (client *Client) CalendarDates() ([]*CalendarDate, error) {
 
 	return response.Response, nil
 }
+
+// CalendarDateByService gets a list of exceptions for a given service ID from the AT GTFS API
+func (client *Client) CalendarDateByService(serviceID string) ([]*CalendarDate, error) {
+	url := baseURL + "/v2/gtfs/calendarDate/serviceId/" + serviceID
+
+	var response calendarDatesResponse
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if response.Error != nil {
+		return nil, errors.New(*response.Error)
+	}
+
+	return response.Response, nil
+}
