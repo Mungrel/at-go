@@ -36,7 +36,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [ ] Trips
 - [ ] Trips by Id
 - [ ] Trips by Route
-- [ ] Versions
+- [x] Versions
 
 [Locations](https://dev-portal.at.govt.nz/docs/services/locations/operations/5806972ae7e2890e84718eef)
 - [ ] Customer service centres

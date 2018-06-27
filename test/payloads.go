@@ -10,6 +10,7 @@ const (
 	calendarDates          = "calendar_dates.json"
 	calendarDatesByService = "calendar_dates_by_service.json"
 	metadata               = "metadata.json"
+	versions               = "versions.json"
 )
 
 func getJSON(fileName string) string {
