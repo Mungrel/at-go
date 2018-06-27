@@ -1,0 +1,28 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "route_id": "65001-20180605110613_v67.1",
+            "agency_id": "NZB",
+            "route_short_name": "650",
+            "route_long_name": "Pt Chevalier Shops To Glen Innes Via Greenlane",
+            "route_desc": null,
+            "route_type": 3,
+            "route_url": null,
+            "route_color": null,
+            "route_text_color": null
+        },
+        {
+            "route_id": "35802-20180524131340_v66.89",
+            "agency_id": "HE",
+            "route_short_name": "358",
+            "route_long_name": "Onehunga To Pakuranga Plaza Via Penrose",
+            "route_desc": null,
+            "route_type": 3,
+            "route_url": null,
+            "route_color": null,
+            "route_text_color": null
+        }
+    ],
+    "error": null
+}

@@ -13,7 +13,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [x] Calendar Dates by Service
 - [x] Calendars
 - [x] Metadata
-- [ ] Routes
+- [x] Routes
 - [ ] Routes by Location
 - [ ] Routes by Long Name
 - [ ] Routes by Short Name
