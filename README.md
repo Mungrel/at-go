@@ -33,7 +33,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [ ] Stops
 - [ ] Stops by Location
 - [ ] Stops Search
-- [ ] Trips
+- [x] Trips
 - [ ] Trips by Id
 - [ ] Trips by Route
 - [x] Versions

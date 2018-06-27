@@ -1,0 +1,28 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "route_id": "98302-20180524131340_v66.89",
+            "service_id": "1983053937-20180524131340_v66.89",
+            "trip_id": "1983053937-20180524131340_v66.89",
+            "trip_headsign": "Gulf Harbour",
+            "direction_id": 1,
+            "block_id": null,
+            "shape_id": "813-20180524131340_v66.89",
+            "trip_short_name": null,
+            "trip_type": null
+        },
+        {
+            "route_id": "88103-20180605110613_v67.1",
+            "service_id": "12881116336-20180605110613_v67.1",
+            "trip_id": "12881116336-20180605110613_v67.1",
+            "trip_headsign": "Newmarket",
+            "direction_id": 0,
+            "block_id": null,
+            "shape_id": "81-20180605110613_v67.1",
+            "trip_short_name": null,
+            "trip_type": null
+        }
+    ],
+    "error": null
+}

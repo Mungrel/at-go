@@ -10,6 +10,7 @@ const (
 	calendarDates          = "calendar_dates.json"
 	calendarDatesByService = "calendar_dates_by_service.json"
 	metadata               = "metadata.json"
+	trips                  = "trips.json"
 	versions               = "versions.json"
 )
 

@@ -47,6 +47,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newResponse(http.StatusOK, getJSON(metadata)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/gtfs/trips") {
+		return newResponse(http.StatusOK, getJSON(trips)), nil
+	}
+
 	if strings.HasSuffix(url, "/v2/gtfs/versions") {
 		return newResponse(http.StatusOK, getJSON(versions)), nil
 	}
