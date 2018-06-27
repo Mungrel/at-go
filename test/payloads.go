@@ -13,6 +13,7 @@ const (
 	routes                 = "routes.json"
 	stops                  = "stops.json"
 	trips                  = "trips.json"
+	tripsByID              = "trips_by_id.json"
 	versions               = "versions.json"
 )
 

@@ -42,3 +42,28 @@ func TestTrips(t *testing.T) {
 
 	assert.Equal(expected, trips)
 }
+
+func TestTripsByServiceID(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	trips, err := mockATClient.TripsByID(mockTripID)
+	assert.Nil(err)
+	assert.NotNil(trips)
+
+	expected := []*Trip{
+		{
+			RouteID:       "98302-20180524131340_v66.89",
+			ServiceID:     "1983053937-20180524131340_v66.89",
+			TripID:        "1983053937-20180524131340_v66.89",
+			TripHeadsign:  "Gulf Harbour",
+			DirectionID:   1,
+			BlockID:       "",
+			ShapeID:       "813-20180524131340_v66.89",
+			TripShortName: "",
+			TripType:      "",
+		},
+	}
+
+	assert.Equal(expected, trips)
+}

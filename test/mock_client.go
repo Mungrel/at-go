@@ -9,7 +9,10 @@ import (
 	at "github.com/Mungrel/at-go"
 )
 
-const mockServiceID = "123456ABC"
+const (
+	mockServiceID = "123456ABC"
+	mockTripID    = "98302-20180524131340_v66.89"
+)
 
 type mockClient struct{}
 
@@ -61,6 +64,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/gtfs/versions") {
 		return newResponse(http.StatusOK, getJSON(versions)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/trips/tripId/"+mockTripID) {
+		return newResponse(http.StatusOK, getJSON(tripsByID)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")
