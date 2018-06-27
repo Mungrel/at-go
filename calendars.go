@@ -40,11 +40,12 @@ func (client *Client) Calendars() ([]*Calendar, error) {
 }
 
 // CalendarByService gets a calendar by its serviceID from the AT GTFS API
-func (client *Client) CalendarByService(serviceID string) (*Calendar, error) {
+func (client *Client) CalendarByService(serviceID string) ([]*Calendar, error) {
 	url := baseURL + "/v2/gtfs/calendar/serviceId/" + serviceID
 
 	var response calendarsResponse
 	err := client.get(url, &response)
+
 	if err != nil {
 		return nil, err
 	}
@@ -53,9 +54,5 @@ func (client *Client) CalendarByService(serviceID string) (*Calendar, error) {
 		return nil, errors.New(*response.Error)
 	}
 
-	if len(response.Response) == 0 {
-		return nil, errors.New("No calendar that service ID")
-	}
-
-	return response.Response[0], nil
+	return response.Response, nil
 }
