@@ -11,6 +11,7 @@ import (
 
 const (
 	mockServiceID = "123456ABC"
+	mockRouteID   = "98302-20180524131340_v66.89"
 	mockTripID    = "98302-20180524131340_v66.89"
 	mockShapeID   = "813-20180524131340_v66.89"
 )
@@ -73,6 +74,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/gtfs/trips/tripId/"+mockTripID) {
 		return newResponse(http.StatusOK, getJSON(tripsByID)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/trips/routeid/"+mockRouteID) {
+		return newResponse(http.StatusOK, getJSON(tripsByRouteID)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/locations/customerservicecentres") {

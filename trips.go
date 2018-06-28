@@ -56,3 +56,21 @@ func (client *Client) TripsByID(tripID string) ([]*Trip, error) {
 
 	return response.Response, nil
 }
+
+// TripsByRouteID returns a list of Trips, filtered by routeID from the AT GTFS API
+func (client *Client) TripsByRouteID(routeID string) ([]*Trip, error) {
+	url := baseURL + "/v2/gtfs/trips/routeid/" + routeID
+
+	var response tripsResponse
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if response.Error != nil {
+		return nil, errors.New(*response.Error)
+	}
+
+	return response.Response, nil
+}

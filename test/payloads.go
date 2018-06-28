@@ -16,6 +16,7 @@ const (
 	shapeGeometryByID      = "shape_geometry_by_id.json"
 	trips                  = "trips.json"
 	tripsByID              = "trips_by_id.json"
+	tripsByRouteID         = "trips_by_route_id.json"
 	versions               = "versions.json"
 	customerServiceCentres = "customer_service_centres.json"
 )

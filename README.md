@@ -35,7 +35,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [ ] Stops Search
 - [x] Trips
 - [x] Trips by Id
-- [ ] Trips by Route
+- [x] Trips by Route
 - [x] Versions
 
 [Locations](https://dev-portal.at.govt.nz/docs/services/locations/operations/5806972ae7e2890e84718eef)
