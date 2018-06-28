@@ -1,0 +1,20 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "shape_id": "81-20180605110613_v67.1",
+            "shape_pt_lat": -36.72234,
+            "shape_pt_lon": 174.7125,
+            "shape_pt_sequence": 1,
+            "shape_dist_traveled": null
+        },
+        {
+            "shape_id": "81-20180605110613_v67.1",
+            "shape_pt_lat": -36.72234,
+            "shape_pt_lon": 174.7125,
+            "shape_pt_sequence": 2,
+            "shape_dist_traveled": null
+        }
+    ],
+    "error": null
+}

@@ -10,10 +10,11 @@ import (
 )
 
 const (
-	mockServiceID = "123456ABC"
-	mockRouteID   = "98302-20180524131340_v66.89"
-	mockTripID    = "98302-20180524131340_v66.89"
-	mockShapeID   = "813-20180524131340_v66.89"
+	mockServiceID   = "123456ABC"
+	mockRouteID     = "98302-20180524131340_v66.89"
+	mockTripID      = "98302-20180524131340_v66.89"
+	mockShapeID     = "81-20180605110613_v67.1"
+	mockShapeGeomID = "813-20180524131340_v66.89"
 )
 
 type mockClient struct{}
@@ -76,6 +77,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newResponse(http.StatusOK, getJSON(tripsByID)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/gtfs/shapes/shapeId/"+mockShapeID) {
+		return newResponse(http.StatusOK, getJSON(shapesByID)), nil
+	}
+
 	if strings.HasSuffix(url, "/v2/gtfs/trips/routeid/"+mockRouteID) {
 		return newResponse(http.StatusOK, getJSON(tripsByRouteID)), nil
 	}
@@ -84,7 +89,7 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newResponse(http.StatusOK, getJSON(customerServiceCentres)), nil
 	}
 
-	if strings.HasSuffix(url, "/v2/gtfs/shapes/geometry/"+mockShapeID) {
+	if strings.HasSuffix(url, "/v2/gtfs/shapes/geometry/"+mockShapeGeomID) {
 		return newResponse(http.StatusOK, getJSON(shapeGeometryByID)), nil
 	}
 

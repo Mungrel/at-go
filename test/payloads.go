@@ -13,6 +13,7 @@ const (
 	routes                 = "routes.json"
 	routesByLocation       = "routes_by_location.json"
 	stops                  = "stops.json"
+	shapesByID             = "shapes_by_id.json"
 	shapeGeometryByID      = "shape_geometry_by_id.json"
 	trips                  = "trips.json"
 	tripsByID              = "trips_by_id.json"

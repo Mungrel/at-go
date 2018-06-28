@@ -11,7 +11,7 @@ func TestShapeGeomByID(t *testing.T) {
 	mockATClient := newMockClient()
 	assert := assert.New(t)
 
-	shapeGeom, err := mockATClient.ShapeGeometryByID(mockShapeID)
+	shapeGeom, err := mockATClient.ShapeGeometryByID(mockShapeGeomID)
 	assert.Nil(err)
 	assert.NotNil(shapeGeom)
 
