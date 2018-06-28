@@ -55,6 +55,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newResponse(http.StatusOK, getJSON(routes)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/gtfs/routes/geosearch") {
+		return newResponse(http.StatusOK, getJSON(routesByLocation)), nil
+	}
+
 	if strings.HasSuffix(url, "/v2/gtfs/stops") {
 		return newResponse(http.StatusOK, getJSON(stops)), nil
 	}

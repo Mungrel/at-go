@@ -1,0 +1,30 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "route_id": "20439-20180524131340_v66.89",
+            "agency_id": "AM",
+            "route_short_name": "STH",
+            "route_long_name": "Papakura Train Station to Britomart Train Station",
+            "route_desc": null,
+            "route_type": 2,
+            "route_url": null,
+            "route_color": null,
+            "route_text_color": null,
+            "st_distance_sphere": 127.33146307
+        },
+        {
+            "route_id": "20328-20180524131340_v66.89",
+            "agency_id": "AM",
+            "route_short_name": "STH",
+            "route_long_name": "Britomart Train Station to Papakura Train Station",
+            "route_desc": null,
+            "route_type": 2,
+            "route_url": null,
+            "route_color": null,
+            "route_text_color": null,
+            "st_distance_sphere": 127.33146307
+        }
+    ],
+    "error": null
+}

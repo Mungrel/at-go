@@ -14,7 +14,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [x] Calendars
 - [x] Metadata
 - [x] Routes
-- [ ] Routes by Location
+- [x] Routes by Location
 - [ ] Routes by Long Name
 - [ ] Routes by Short Name
 - [ ] Routes by Stop
