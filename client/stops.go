@@ -78,3 +78,21 @@ func (client *Client) StopsByLocation(latitude, longitude, radius float64) ([]*S
 
 	return response.Response, nil
 }
+
+// StopsSearch searches the stops list by stop name
+func (client *Client) StopsSearch(searchTerm string) ([]*Stop, error) {
+	url := baseURL + "/v2/gtfs/stops/search/" + searchTerm
+
+	var response stopsResponse
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if response.Error != nil {
+		return nil, errors.New(*response.Error)
+	}
+
+	return response.Response, nil
+}

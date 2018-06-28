@@ -10,11 +10,12 @@ import (
 )
 
 const (
-	mockServiceID   = "123456ABC"
-	mockRouteID     = "98302-20180524131340_v66.89"
-	mockTripID      = "98302-20180524131340_v66.89"
-	mockShapeID     = "81-20180605110613_v67.1"
-	mockShapeGeomID = "813-20180524131340_v66.89"
+	mockServiceID       = "123456ABC"
+	mockRouteID         = "98302-20180524131340_v66.89"
+	mockTripID          = "98302-20180524131340_v66.89"
+	mockShapeID         = "81-20180605110613_v67.1"
+	mockShapeGeomID     = "813-20180524131340_v66.89"
+	mockStopsSearchTerm = "Papakura"
 )
 
 type mockClient struct{}
@@ -95,6 +96,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/gtfs/stops/geosearch") {
 		return newResponse(http.StatusOK, getJSON(stopsByLocation)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/stops/search/"+mockStopsSearchTerm) {
+		return newResponse(http.StatusOK, getJSON(stopsSearch)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")
