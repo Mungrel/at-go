@@ -1,13 +1,5 @@
 package client
 
-import "errors"
-
-type shapesResponse struct {
-	Status   string   `json:"status"`
-	Response []*Shape `json:"response"`
-	Error    *string  `json:"error"`
-}
-
 // Shape represents a Shape in the AT GTFS API
 type Shape struct {
 	ID                string  `json:"shape_id"`
@@ -21,16 +13,12 @@ type Shape struct {
 func (client *Client) ShapesByID(shapeID string) ([]*Shape, error) {
 	url := baseURL + "/v2/gtfs/shapes/shapeId/" + shapeID
 
-	var response shapesResponse
+	var response []*Shape
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }

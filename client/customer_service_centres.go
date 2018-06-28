@@ -1,13 +1,5 @@
 package client
 
-import "errors"
-
-type customerServiceCentreResponse struct {
-	Status   string                   `json:"status"`
-	Response []*CustomerServiceCentre `json:"response"`
-	Error    *string                  `json:"error"`
-}
-
 // CustomerServiceCentre represents a customer service location in the AT Locations API
 type CustomerServiceCentre struct {
 	ID          string  `json:"id"`
@@ -25,16 +17,12 @@ type CustomerServiceCentre struct {
 func (client *Client) CustomerServiceCentres() ([]*CustomerServiceCentre, error) {
 	url := baseURL + "/v2/locations/customerservicecentres"
 
-	var response customerServiceCentreResponse
+	var response []*CustomerServiceCentre
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }

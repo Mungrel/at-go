@@ -1,13 +1,5 @@
 package client
 
-import "errors"
-
-type agencyResponse struct {
-	Status   string    `json:"status"`
-	Response []*Agency `json:"response"`
-	Error    *string   `json:"error"`
-}
-
 // Agency represents an agency from the AT GTFS API
 type Agency struct {
 	ID       string `json:"agency_id"`
@@ -23,16 +15,12 @@ type Agency struct {
 func (client *Client) Agencies() ([]*Agency, error) {
 	url := baseURL + "/v2/gtfs/agency"
 
-	var response agencyResponse
+	var response []*Agency
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }

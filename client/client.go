@@ -2,6 +2,8 @@ package client
 
 import (
 	"encoding/json"
+	"errors"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -29,6 +31,14 @@ func NewATClient(apiKey string) *Client {
 	}
 }
 
+type response struct {
+	Status   string      `json:"status"`
+	Response interface{} `json:"response"`
+	Error    *string     `json:"error"`
+}
+
+const OKStatus = "OK"
+
 func (c *Client) get(url string, result interface{}) error {
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
@@ -47,5 +57,22 @@ func (c *Client) get(url string, result interface{}) error {
 		return err
 	}
 
-	return json.Unmarshal(respBytes, &result)
+	respStruct := response{
+		Response: result,
+	}
+
+	err = json.Unmarshal(respBytes, &respStruct)
+	if err != nil {
+		return err
+	}
+
+	if respStruct.Error != nil {
+		return errors.New(*respStruct.Error)
+	}
+
+	if respStruct.Status != OKStatus {
+		return fmt.Errorf("Non OK status response: %s", respStruct.Status)
+	}
+
+	return nil
 }

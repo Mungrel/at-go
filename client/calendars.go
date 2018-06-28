@@ -1,13 +1,5 @@
 package client
 
-import "errors"
-
-type calendarsResponse struct {
-	Status   string      `json:"status"`
-	Response []*Calendar `json:"response"`
-	Error    *string     `json:"error"`
-}
-
 // Calendar represents a service calendar from the AT GTFS API
 type Calendar struct {
 	ServiceID string     `json:"service_id"`
@@ -26,33 +18,25 @@ type Calendar struct {
 func (client *Client) Calendars() ([]*Calendar, error) {
 	url := baseURL + "/v2/gtfs/calendar"
 
-	var response calendarsResponse
+	var response []*Calendar
 	err := client.get(url, &response)
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }
 
 // CalendarByService gets a calendar by its serviceID from the AT GTFS API
 func (client *Client) CalendarByService(serviceID string) ([]*Calendar, error) {
 	url := baseURL + "/v2/gtfs/calendar/serviceId/" + serviceID
 
-	var response calendarsResponse
+	var response []*Calendar
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }

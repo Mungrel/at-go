@@ -1,16 +1,9 @@
 package client
 
 import (
-	"errors"
 	"net/url"
 	"strconv"
 )
-
-type routesResponse struct {
-	Status   string   `json:"status"`
-	Response []*Route `json:"response"`
-	Error    *string  `json:"error"`
-}
 
 // Route represents a route from the AT GTFS API
 type Route struct {
@@ -30,18 +23,14 @@ type Route struct {
 func (client *Client) Routes() ([]*Route, error) {
 	url := baseURL + "/v2/gtfs/routes"
 
-	var response routesResponse
+	var response []*Route
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }
 
 // RoutesByLocation gets a list of routes within the radius of a geo point from the AT GTFS API
@@ -54,16 +43,12 @@ func (client *Client) RoutesByLocation(latitude, longitude, radius float64) ([]*
 
 	url := baseURL + "/v2/gtfs/routes/geosearch?" + params.Encode()
 
-	var response routesResponse
+	var response []*Route
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }

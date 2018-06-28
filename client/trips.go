@@ -1,13 +1,5 @@
 package client
 
-import "errors"
-
-type tripsResponse struct {
-	Status   string  `json:"status"`
-	Response []*Trip `json:"response"`
-	Error    *string `json:"error"`
-}
-
 // Trip represents a Trip from the AT GTFS API
 type Trip struct {
 	RouteID       string `json:"route_id"`
@@ -25,52 +17,40 @@ type Trip struct {
 func (client *Client) Trips() ([]*Trip, error) {
 	url := baseURL + "/v2/gtfs/trips"
 
-	var response tripsResponse
+	var response []*Trip
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }
 
 // TripsByID returns a list of Trips, filtered by tripID from the AT GTFS API
 func (client *Client) TripsByID(tripID string) ([]*Trip, error) {
 	url := baseURL + "/v2/gtfs/trips/tripId/" + tripID
 
-	var response tripsResponse
+	var response []*Trip
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }
 
 // TripsByRouteID returns a list of Trips, filtered by routeID from the AT GTFS API
 func (client *Client) TripsByRouteID(routeID string) ([]*Trip, error) {
 	url := baseURL + "/v2/gtfs/trips/routeid/" + routeID
 
-	var response tripsResponse
+	var response []*Trip
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }

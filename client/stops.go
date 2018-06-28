@@ -1,16 +1,9 @@
 package client
 
 import (
-	"errors"
 	"net/url"
 	"strconv"
 )
-
-type stopsResponse struct {
-	Status   string  `json:"status"`
-	Response []*Stop `json:"response"`
-	Error    *string `json:"error"`
-}
 
 // Stop represents a stop in the AT GTFS API
 type Stop struct {
@@ -41,18 +34,14 @@ type Stop struct {
 func (client *Client) Stops() ([]*Stop, error) {
 	url := baseURL + "/v2/gtfs/stops"
 
-	var response stopsResponse
+	var response []*Stop
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }
 
 // StopsByLocation gets a list of stops within the radius of a point from the AT GTFS API
@@ -65,34 +54,26 @@ func (client *Client) StopsByLocation(latitude, longitude, radius float64) ([]*S
 
 	url := baseURL + "/v2/gtfs/stops/geosearch?" + params.Encode()
 
-	var response stopsResponse
+	var response []*Stop
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }
 
 // StopsSearch searches the stops list by stop name
 func (client *Client) StopsSearch(searchTerm string) ([]*Stop, error) {
 	url := baseURL + "/v2/gtfs/stops/search/" + searchTerm
 
-	var response stopsResponse
+	var response []*Stop
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if response.Error != nil {
-		return nil, errors.New(*response.Error)
-	}
-
-	return response.Response, nil
+	return response, nil
 }
