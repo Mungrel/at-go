@@ -1,6 +1,10 @@
 package client
 
-import "errors"
+import (
+	"errors"
+	"net/url"
+	"strconv"
+)
 
 type stopsResponse struct {
 	Status   string  `json:"status"`
@@ -30,11 +34,36 @@ type Stop struct {
 	Direction          string  `json:"direction"`
 	Position           string  `json:"position"`
 	Geom               string  `json:"the_geom"`
+	StDistanceSphere   float64 `json:"st_distance_sphere"`
 }
 
 // Stops gets a list of stops from the AT GTFS API
 func (client *Client) Stops() ([]*Stop, error) {
 	url := baseURL + "/v2/gtfs/stops"
+
+	var response stopsResponse
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if response.Error != nil {
+		return nil, errors.New(*response.Error)
+	}
+
+	return response.Response, nil
+}
+
+// StopsByLocation gets a list of stops within the radius of a point from the AT GTFS API
+func (client *Client) StopsByLocation(latitude, longitude, radius float64) ([]*Stop, error) {
+	params := url.Values{}
+
+	params.Add("lat", strconv.FormatFloat(latitude, 'f', 6, 64))
+	params.Add("lng", strconv.FormatFloat(longitude, 'f', 6, 64))
+	params.Add("distance", strconv.FormatFloat(radius, 'f', 6, 64))
+
+	url := baseURL + "/v2/gtfs/stops/geosearch?" + params.Encode()
 
 	var response stopsResponse
 	err := client.get(url, &response)

@@ -93,6 +93,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newResponse(http.StatusOK, getJSON(shapeGeometryByID)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/gtfs/stops/geosearch") {
+		return newResponse(http.StatusOK, getJSON(stopsByLocation)), nil
+	}
+
 	return nil, errors.New("Endpoint not mocked")
 }
 

@@ -46,12 +46,11 @@ func (client *Client) Routes() ([]*Route, error) {
 
 // RoutesByLocation gets a list of routes within the radius of a geo point from the AT GTFS API
 func (client *Client) RoutesByLocation(latitude, longitude, radius float64) ([]*Route, error) {
-	lat := strconv.FormatFloat(latitude, 'f', 6, 64)
-	lng := strconv.FormatFloat(longitude, 'f', 6, 64)
-
 	params := url.Values{}
-	params.Add("lat", lat)
-	params.Add("lng", lng)
+
+	params.Add("lat", strconv.FormatFloat(latitude, 'f', 6, 64))
+	params.Add("lng", strconv.FormatFloat(longitude, 'f', 6, 64))
+	params.Add("distance", strconv.FormatFloat(radius, 'f', 6, 64))
 
 	url := baseURL + "/v2/gtfs/routes/geosearch?" + params.Encode()
 

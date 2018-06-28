@@ -31,7 +31,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [ ] Stop Times by Trip
 - [ ] Stop Times by Trip and Sequence
 - [x] Stops
-- [ ] Stops by Location
+- [x] Stops by Location
 - [ ] Stops Search
 - [x] Trips
 - [x] Trips by Id
