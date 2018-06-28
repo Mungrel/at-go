@@ -75,6 +75,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newResponse(http.StatusOK, getJSON(tripsByID)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/locations/customerservicecentres") {
+		return newResponse(http.StatusOK, getJSON(customerServiceCentres)), nil
+	}
+
 	if strings.HasSuffix(url, "/v2/gtfs/shapes/geometry/"+mockShapeID) {
 		return newResponse(http.StatusOK, getJSON(shapeGeometryByID)), nil
 	}

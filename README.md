@@ -39,7 +39,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [x] Versions
 
 [Locations](https://dev-portal.at.govt.nz/docs/services/locations/operations/5806972ae7e2890e84718eef)
-- [ ] Customer service centres
+- [x] Customer service centres
 - [ ] Parking Locations
 - [ ] Points of Interest
 - [ ] Scheduled Works

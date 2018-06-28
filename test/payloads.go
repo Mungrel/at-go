@@ -17,6 +17,7 @@ const (
 	trips                  = "trips.json"
 	tripsByID              = "trips_by_id.json"
 	versions               = "versions.json"
+	customerServiceCentres = "customer_service_centres.json"
 )
 
 func getJSON(fileName string) string {
