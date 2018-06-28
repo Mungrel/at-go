@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	. "github.com/Mungrel/at-go"
+	. "github.com/Mungrel/at-go/client"
 	"github.com/stretchr/testify/assert"
 )
 

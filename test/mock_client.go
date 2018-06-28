@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	at "github.com/Mungrel/at-go"
+	at "github.com/Mungrel/at-go/client"
 )
 
 const (
