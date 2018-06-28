@@ -20,7 +20,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [ ] Routes by Stop
 - [ ] Routes Id
 - [ ] Routes Search
-- [ ] Shape geometry by Id
+- [x] Shape geometry by Id
 - [ ] Shapes by Id
 - [ ] Shapes by Trip
 - [ ] Stop by Code

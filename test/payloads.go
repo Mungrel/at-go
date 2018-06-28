@@ -12,6 +12,7 @@ const (
 	metadata               = "metadata.json"
 	routes                 = "routes.json"
 	stops                  = "stops.json"
+	shapeGeometryByID      = "shape_geometry_by_id.json"
 	trips                  = "trips.json"
 	tripsByID              = "trips_by_id.json"
 	versions               = "versions.json"
