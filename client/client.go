@@ -11,6 +11,7 @@ import (
 const (
 	baseURL      = "https://api.at.govt.nz"
 	apiKeyHeader = "Ocp-Apim-Subscription-Key"
+	okStatus     = "OK"
 )
 
 type clientInterface interface {
@@ -36,8 +37,6 @@ type response struct {
 	Response interface{} `json:"response"`
 	Error    *string     `json:"error"`
 }
-
-const OKStatus = "OK"
 
 func (c *Client) get(url string, result interface{}) error {
 	req, err := http.NewRequest("GET", url, nil)
@@ -70,7 +69,7 @@ func (c *Client) get(url string, result interface{}) error {
 		return errors.New(*respStruct.Error)
 	}
 
-	if respStruct.Status != OKStatus {
+	if respStruct.Status != okStatus {
 		return fmt.Errorf("Non OK status response: %s", respStruct.Status)
 	}
 
