@@ -32,87 +32,87 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 	url := req.URL.Path
 
 	if strings.HasSuffix(url, "/v2/gtfs/agency") {
-		return newResponse(http.StatusOK, getJSON(agencies)), nil
+		return newOKResponse(getJSON(agencies)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/calendar") {
-		return newResponse(http.StatusOK, getJSON(calendars)), nil
+		return newOKResponse(getJSON(calendars)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/calendar/serviceId/"+mockServiceID) {
-		return newResponse(http.StatusOK, getJSON(calendarByService)), nil
+		return newOKResponse(getJSON(calendarByService)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/calendarDate") {
-		return newResponse(http.StatusOK, getJSON(calendarDates)), nil
+		return newOKResponse(getJSON(calendarDates)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/calendarDate/serviceId/"+mockServiceID) {
-		return newResponse(http.StatusOK, getJSON(calendarDatesByService)), nil
+		return newOKResponse(getJSON(calendarDatesByService)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/metadata") {
-		return newResponse(http.StatusOK, getJSON(metadata)), nil
+		return newOKResponse(getJSON(metadata)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/routes") {
-		return newResponse(http.StatusOK, getJSON(routes)), nil
+		return newOKResponse(getJSON(routes)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/routes/geosearch") {
-		return newResponse(http.StatusOK, getJSON(routesByLocation)), nil
+		return newOKResponse(getJSON(routesByLocation)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/stops") {
-		return newResponse(http.StatusOK, getJSON(stops)), nil
+		return newOKResponse(getJSON(stops)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/trips") {
-		return newResponse(http.StatusOK, getJSON(trips)), nil
+		return newOKResponse(getJSON(trips)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/versions") {
-		return newResponse(http.StatusOK, getJSON(versions)), nil
+		return newOKResponse(getJSON(versions)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/trips/tripId/"+mockTripID) {
-		return newResponse(http.StatusOK, getJSON(tripsByID)), nil
+		return newOKResponse(getJSON(tripsByID)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/shapes/shapeId/"+mockShapeID) {
-		return newResponse(http.StatusOK, getJSON(shapesByID)), nil
+		return newOKResponse(getJSON(shapesByID)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/trips/routeid/"+mockRouteID) {
-		return newResponse(http.StatusOK, getJSON(tripsByRouteID)), nil
+		return newOKResponse(getJSON(tripsByRouteID)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/locations/customerservicecentres") {
-		return newResponse(http.StatusOK, getJSON(customerServiceCentres)), nil
+		return newOKResponse(getJSON(customerServiceCentres)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/shapes/geometry/"+mockShapeGeomID) {
-		return newResponse(http.StatusOK, getJSON(shapeGeometryByID)), nil
+		return newOKResponse(getJSON(shapeGeometryByID)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/stops/geosearch") {
-		return newResponse(http.StatusOK, getJSON(stopsByLocation)), nil
+		return newOKResponse(getJSON(stopsByLocation)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/stops/search/"+mockStopsSearchTerm) {
-		return newResponse(http.StatusOK, getJSON(stopsSearch)), nil
+		return newOKResponse(getJSON(stopsSearch)), nil
 	}
 
 	if strings.HasSuffix(url, "/v2/gtfs/routes/routeLongName/"+mockRoutesLongName) {
-		return newResponse(http.StatusOK, getJSON(routesByLongName)), nil
+		return newOKResponse(getJSON(routesByLongName)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")
 }
 
-func newResponse(code int, body string) *http.Response {
+func newOKResponse(body string) *http.Response {
 	return &http.Response{
-		StatusCode: code,
+		StatusCode: http.StatusOK,
 		Body:       ioutil.NopCloser(strings.NewReader(body)),
 	}
 }
