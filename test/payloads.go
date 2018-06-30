@@ -24,6 +24,7 @@ const (
 	tripsByRouteID         = "trips_by_route_id.json"
 	versions               = "versions.json"
 	customerServiceCentres = "customer_service_centres.json"
+	parkingLocations       = "parking_locations.json"
 )
 
 func getJSON(fileName string) string {

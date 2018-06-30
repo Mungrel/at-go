@@ -1,0 +1,24 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "id": "1",
+            "name": "P120 parallel park without kerb cutting.",
+            "address": "16 Birkenhead Avenue Birkenhead Birkenhead",
+            "mobilitySpaces": 1,
+            "type": "mobility",
+            "latitude": -36.811614,
+            "longitude": 174.726024
+        },
+        {
+            "id": "2",
+            "name": "Not time limted angle parking in parking area at end of Anzac Road.Operates at all times.Drop kerb access to rear of vehicles.",
+            "address": " Anzac Street Browns Bay Browns Bay",
+            "mobilitySpaces": 2,
+            "type": "mobility",
+            "latitude": -36.716683,
+            "longitude": 174.749114
+        }
+    ],
+    "error": null
+}
