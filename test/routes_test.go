@@ -122,3 +122,39 @@ func TestRoutesByLongName(t *testing.T) {
 
 	assert.Equal(expected, routes)
 }
+
+func TestRoutesByShortName(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	routes, err := mockATClient.RoutesByShortName(mockRoutesShortName)
+	assert.Nil(err)
+	assert.NotNil(routes)
+
+	expected := []*Route{
+		{
+			ID:          "20439-20180524131340_v66.89",
+			AgencyID:    "AM",
+			ShortName:   "STH",
+			LongName:    "Papakura Train Station to Britomart Train Station",
+			Description: "",
+			Type:        2,
+			URL:         "",
+			Color:       "",
+			TextColor:   "",
+		},
+		{
+			ID:          "20439-20180605110613_v67.1",
+			AgencyID:    "AM",
+			ShortName:   "STH",
+			LongName:    "Papakura Train Station to Britomart Train Station",
+			Description: "",
+			Type:        2,
+			URL:         "",
+			Color:       "",
+			TextColor:   "",
+		},
+	}
+
+	assert.Equal(expected, routes)
+}

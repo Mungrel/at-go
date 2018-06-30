@@ -13,6 +13,7 @@ const (
 	routes                 = "routes.json"
 	routesByLocation       = "routes_by_location.json"
 	routesByLongName       = "routes_by_long_name.json"
+	routesByShortName      = "routes_by_short_name.json"
 	stops                  = "stops.json"
 	stopsByLocation        = "stops_by_location.json"
 	stopsSearch            = "stops_search.json"

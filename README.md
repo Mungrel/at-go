@@ -16,7 +16,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [x] Routes
 - [x] Routes by Location
 - [x] Routes by Long Name
-- [ ] Routes by Short Name
+- [x] Routes by Short Name
 - [ ] Routes by Stop
 - [ ] Routes Id
 - [ ] Routes Search
