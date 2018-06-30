@@ -12,6 +12,7 @@ const (
 	metadata               = "metadata.json"
 	routes                 = "routes.json"
 	routesByLocation       = "routes_by_location.json"
+	routesByLongName       = "routes_by_long_name.json"
 	stops                  = "stops.json"
 	stopsByLocation        = "stops_by_location.json"
 	stopsSearch            = "stops_search.json"

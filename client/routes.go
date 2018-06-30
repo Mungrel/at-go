@@ -52,3 +52,17 @@ func (client *Client) RoutesByLocation(latitude, longitude, radius float64) ([]*
 
 	return response, nil
 }
+
+// RoutesByLongName gets a list of routes by long name from the AT GTFS API
+func (client *Client) RoutesByLongName(longName string) ([]*Route, error) {
+	url := baseURL + "/v2/gtfs/routes/routeLongName/" + longName
+
+	var response []*Route
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}
