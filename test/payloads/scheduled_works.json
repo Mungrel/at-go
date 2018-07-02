@@ -1,0 +1,68 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "id": "109847",
+            "code": "E109847",
+            "type": "Non Excavation",
+            "name": "Non Excavation",
+            "address": "",
+            "suburb": "Auckland",
+            "region": "Auckland Central",
+            "description": "Other (Specify Below). To install and/or remove cross street banners or Flags to poles Trucks used to protect cherry picker when working: ? Level 1 - any speed level 1 truck with arrow board  ? Level 2 -under 70kph needs 1 attenuator  ? Level 2 - 70kph + needs 2 attenuator  Any State Highway (Level 1 or 2) needs NZTA separate approval  Flags As listed in the following sheets & maps attached.",
+            "startDate": "2013-06-01T00:00:00Z",
+            "endDate": "2015-06-30T00:00:00Z",
+            "lastUpdated": "2017-03-17T10:48:23Z",
+            "contractorCompany": "NZ Traffic Ltd",
+            "latitude": -36.84845969999998,
+            "longitude": 174.76333150000005,
+            "geometry": {
+                "type": "point",
+                "coordinates": [
+                    174.76333150000005,
+                    -36.84845969999998
+                ],
+                "encoded": false
+            }
+        },
+        {
+            "id": "185304",
+            "code": "583225",
+            "type": "Excavation",
+            "name": "Excavation",
+            "address": "229 Richardson Road, Mount Roskill South, Auckland on Carriageway and Footpath and Berm",
+            "suburb": "Mount Roskill South",
+            "region": "Auckland Central",
+            "description": "Minor Earthworks/Filling. Richardson Road",
+            "startDate": "2014-06-17T00:00:00Z",
+            "endDate": "2017-10-31T00:00:00Z",
+            "lastUpdated": "2017-04-19T13:37:54Z",
+            "contractorCompany": "FLETCHER CONSTRUCTION LIMITED",
+            "latitude": -36.901927196999964,
+            "longitude": 174.7196914980001,
+            "geometry": {
+                "type": "polygon",
+                "coordinates": [
+                    [
+                        -36.90203020499996,
+                        174.71956268500003
+                    ],
+                    [
+                        -36.90202745199997,
+                        174.71958442200003
+                    ],
+                    [
+                        -36.902022012999964,
+                        174.71960535200003
+                    ],
+                    [
+                        -36.90201402399998,
+                        174.71962496100002
+                    ]
+                ],
+                "encoded": false
+            }
+        }
+    ],
+    "error": null
+}

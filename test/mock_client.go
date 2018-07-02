@@ -116,6 +116,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newOKResponse(getJSON(parkingLocations)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/locations/scheduledworks") {
+		return newOKResponse(getJSON(scheduledWorks)), nil
+	}
+
 	return nil, errors.New("Endpoint not mocked")
 }
 

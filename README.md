@@ -42,7 +42,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [x] Customer service centres
 - [x] Parking Locations
 - [ ] Points of Interest
-- [ ] Scheduled Works
+- [x] Scheduled Works
 
 [Notifications](https://dev-portal.at.govt.nz/docs/services/notifications/operations/57e490217d6df40f107a663e)
 
