@@ -10,14 +10,15 @@ import (
 )
 
 const (
-	mockServiceID       = "123456ABC"
-	mockRouteID         = "98302-20180524131340_v66.89"
-	mockTripID          = "98302-20180524131340_v66.89"
-	mockShapeID         = "81-20180605110613_v67.1"
-	mockShapeGeomID     = "813-20180524131340_v66.89"
-	mockStopsSearchTerm = "Papakura"
-	mockRoutesLongName  = "Papakura Train Station to Britomart Train Station"
-	mockRoutesShortName = "STH"
+	mockServiceID            = "123456ABC"
+	mockRouteID              = "98302-20180524131340_v66.89"
+	mockTripID               = "98302-20180524131340_v66.89"
+	mockShapeID              = "81-20180605110613_v67.1"
+	mockShapeGeomID          = "813-20180524131340_v66.89"
+	mockStopsSearchTerm      = "Papakura"
+	mockRoutesLongName       = "Papakura Train Station to Britomart Train Station"
+	mockRoutesShortName      = "STH"
+	mockNotificationCategory = "MOVED_STOP"
 )
 
 type mockClient struct{}
@@ -122,6 +123,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/notifications/") {
 		return newOKResponse(getJSON(notifications)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/notifications/"+mockNotificationCategory) {
+		return newOKResponse(getJSON(notificationsByCategory)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")

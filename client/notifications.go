@@ -103,3 +103,17 @@ func (client *Client) Notifications() (*Notifications, error) {
 
 	return &response, nil
 }
+
+// NotificationsByCategory gets a Notifications object, with notifications filtered by category
+func (client *Client) NotificationsByCategory(category string) (*Notifications, error) {
+	url := baseURL + "/v2/notifications/" + category
+
+	var response Notifications
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &response, nil
+}

@@ -47,7 +47,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 [Notifications](https://dev-portal.at.govt.nz/docs/services/notifications/operations/57e490217d6df40f107a663e)
 
 - [x] Notifications
-- [ ] Notifications by Category
+- [x] Notifications by Category
 - [ ] Notifications by Stop
 
 [Realtime Transit Feed (GTFS)](https://dev-portal.at.govt.nz/docs/services/realtime/operations/580698237d6df41584d3d0c9)
