@@ -1,0 +1,34 @@
+{
+    "status": "OK",
+    "response": {
+        "data": [
+            {
+                "id": 1,
+                "orderingDate": "2018-07-03 10:48:26",
+                "type": "MOVED_STOP",
+                "title": "Stop 7004 - Sturdee St near Pakenham St has been moved",
+                "stopId": 7004,
+                "existingAddress": "Sturdee St near Pakenham St",
+                "description": "The following services have been affected: 76X,802X,820,822,834,837,839,858,85X,863X,866X,86X,873X,874X,875,877X,879,87X,900X,920,922,945X,952,956"
+            },
+            {
+                "id": "219060",
+                "orderingDate": "2018-07-03 09:00:00",
+                "type": "HIGHWAY",
+                "title": "Highway maintenance",
+                "description": "Delays may be experienced by the public due to the ramp closure. This road work closure is dependent on various factors, including weather, and may be postponed or cancelled at late notice",
+                "impact": "Road Closed",
+                "startDate": "2018-07-03 09:00:00",
+                "endDate": "2018-07-03 18:00:00",
+                "expectedResolution": "04/07/2018 06:00",
+                "location": {
+                    "latitude": -36.96320874052837,
+                    "longitude": 174.86758125862653,
+                    "address": "12 Natalie Place, Otara\nAuckland 2023"
+                }
+            }
+        ],
+        "time": "2018-07-03 10:48:36"
+    },
+    "error": null
+}

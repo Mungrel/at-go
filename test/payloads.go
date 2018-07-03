@@ -26,6 +26,7 @@ const (
 	customerServiceCentres = "customer_service_centres.json"
 	parkingLocations       = "parking_locations.json"
 	scheduledWorks         = "scheduled_works.json"
+	notifications          = "notifications.json"
 )
 
 func getJSON(fileName string) string {
