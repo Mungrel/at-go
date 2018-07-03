@@ -46,7 +46,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 
 [Notifications](https://dev-portal.at.govt.nz/docs/services/notifications/operations/57e490217d6df40f107a663e)
 
-- [ ] Notifications
+- [x] Notifications
 - [ ] Notifications by Category
 - [ ] Notifications by Stop
 
