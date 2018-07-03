@@ -6,8 +6,8 @@ import (
 	"strconv"
 )
 
-// Notifications represents a Notifications response from the AT Notifications API
-type Notifications struct {
+// notifications represents a notifications response from the AT Notifications API
+type notifications struct {
 	Data []*Notification `json:"data"`
 	Time *Timestamp      `json:"time"`
 }
@@ -90,30 +90,30 @@ func (n *Notification) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Notifications gets a Notifications object from the AT Notifications API
-func (client *Client) Notifications() (*Notifications, error) {
+// Notifications gets a list of Notifications
+func (client *Client) Notifications() ([]*Notification, error) {
 	url := baseURL + "/v2/notifications/"
 
-	var response Notifications
+	var response notifications
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	return &response, nil
+	return response.Data, nil
 }
 
-// NotificationsByCategory gets a Notifications object, with notifications filtered by category
-func (client *Client) NotificationsByCategory(category string) (*Notifications, error) {
+// NotificationsByCategory gets a list of Notifications, filtered by category
+func (client *Client) NotificationsByCategory(category string) ([]*Notification, error) {
 	url := baseURL + "/v2/notifications/" + category
 
-	var response Notifications
+	var response notifications
 	err := client.get(url, &response)
 
 	if err != nil {
 		return nil, err
 	}
 
-	return &response, nil
+	return response.Data, nil
 }
