@@ -1,0 +1,30 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "attributes": {
+                "OBJECTID": 36,
+                "AFFECTEDSTOPID": 7004,
+                "AFFECTEDROUTE": "76X,802X,820,822,834,837,839,858,85X,863X,866X,86X,873X,874X,875,877X,879,87X,900X,920,922,945X,952,956",
+                "NEWSTOPID": 1079,
+                "NEWSTOPNAME": "137 Wellesley St",
+                "NEWSTOPEXISTINGROUTE": "OUT",
+                "NEWSTOPSTATUS": "Existing Stop",
+                "NEWSTOPNOTE": ""
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 37,
+                "AFFECTEDSTOPID": 7004,
+                "AFFECTEDROUTE": "76X,802X,820,822,834,837,839,858,85X,863X,866X,86X,873X,874X,875,877X,879,87X,900X,920,922,945X,952,956",
+                "NEWSTOPID": 1083,
+                "NEWSTOPNAME": "Wellesley St near Hobson St",
+                "NEWSTOPEXISTINGROUTE": "OUT",
+                "NEWSTOPSTATUS": "Existing Stop",
+                "NEWSTOPNOTE": ""
+            }
+        }
+    ],
+    "error": null
+}

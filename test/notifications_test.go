@@ -77,3 +77,37 @@ func TestNotificationsByCategory(t *testing.T) {
 
 	assert.Equal(expected, notifications)
 }
+
+func TestNotificationsByStop(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	notifications, err := mockATClient.NotificationsByStop(mockStopID)
+	assert.Nil(err)
+	assert.NotNil(notifications)
+
+	expected := []*StopNotification{
+		{
+			ObjectID:             36,
+			AffectedStopID:       7004,
+			AffectedRoute:        "76X,802X,820,822,834,837,839,858,85X,863X,866X,86X,873X,874X,875,877X,879,87X,900X,920,922,945X,952,956",
+			NewStopID:            1079,
+			NewStopName:          "137 Wellesley St",
+			NewStopExistingRoute: "OUT",
+			NewStopStatus:        "Existing Stop",
+			NewStopNote:          "",
+		},
+		{
+			ObjectID:             37,
+			AffectedStopID:       7004,
+			AffectedRoute:        "76X,802X,820,822,834,837,839,858,85X,863X,866X,86X,873X,874X,875,877X,879,87X,900X,920,922,945X,952,956",
+			NewStopID:            1083,
+			NewStopName:          "Wellesley St near Hobson St",
+			NewStopExistingRoute: "OUT",
+			NewStopStatus:        "Existing Stop",
+			NewStopNote:          "",
+		},
+	}
+
+	assert.Equal(expected, notifications)
+}

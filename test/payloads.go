@@ -28,6 +28,7 @@ const (
 	scheduledWorks          = "scheduled_works.json"
 	notifications           = "notifications.json"
 	notificationsByCategory = "notifications_by_category.json"
+	notificationsByStop     = "notifications_by_stop.json"
 )
 
 func getJSON(fileName string) string {

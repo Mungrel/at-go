@@ -77,6 +77,18 @@ func (n *notificationInterfaceID) toStrID() *Notification {
 	}
 }
 
+// StopNotification represents a stop notification in the AT Locations API
+type StopNotification struct {
+	ObjectID             int64  `json:"OBJECTID"`
+	AffectedStopID       int64  `json:"AFFECTEDSTOPID"`
+	AffectedRoute        string `json:"AFFECTEDROUTE"`
+	NewStopID            int64  `json:"NEWSTOPID"`
+	NewStopName          string `json:"NEWSTOPNAME"`
+	NewStopExistingRoute string `json:"NEWSTOPEXISTINGROUTE"`
+	NewStopStatus        string `json:"NEWSTOPSTATUS"`
+	NewStopNote          string `json:"NEWSTOPNOTE"`
+}
+
 // UnmarshalJSON unmarshals notifications, as the ID field may be int64 or string
 func (n *Notification) UnmarshalJSON(b []byte) error {
 	var notification notificationInterfaceID
@@ -116,4 +128,27 @@ func (client *Client) NotificationsByCategory(category string) ([]*Notification,
 	}
 
 	return response.Data, nil
+}
+
+// NotificationsByStop gets a list of StopNotifications, filtered by stop ID
+func (client *Client) NotificationsByStop(stopID string) ([]*StopNotification, error) {
+	url := baseURL + "/v2/notifications/stop/" + stopID
+
+	type attr struct {
+		Attributes *StopNotification `json:"attributes"`
+	}
+
+	var response []*attr
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	stopNotifs := make([]*StopNotification, len(response))
+	for i := range response {
+		stopNotifs[i] = response[i].Attributes
+	}
+
+	return stopNotifs, nil
 }
