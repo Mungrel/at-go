@@ -77,3 +77,30 @@ func (client *Client) StopsSearch(searchTerm string) ([]*Stop, error) {
 
 	return response, nil
 }
+
+// StopInfo represents a stop info object in the AT GTFS API
+type StopInfo struct {
+	TripID         string `json:"trip_id"`
+	DepartureTime  string `json:"departure_time"`
+	TripShortName  string `json:"trip_short_name"`
+	TripHeadsign   string `json:"trip_headsign"`
+	RouteLongName  string `json:"route_long_name"`
+	RouteShortName string `json:"route_short_name"`
+	StopSequence   int    `json:"stop_sequence"`
+	PickupType     int    `json:"pickup_type"`
+	DropOffType    int    `json:"drop_off_type"`
+}
+
+// StopInfoByCode gets a list of stop info objects, filtered by stop code
+func (client *Client) StopInfoByCode(code string) ([]*StopInfo, error) {
+	url := baseURL + "/v2/gtfs/stops/stopinfo/" + code
+
+	var response []*StopInfo
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}

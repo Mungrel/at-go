@@ -26,7 +26,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [ ] Stop by Code
 - [ ] Stop by Id
 - [ ] Stop by Trip
-- [ ] Stop Info By Code
+- [x] Stop Info By Code
 - [ ] Stop Times by Id
 - [ ] Stop Times by Trip
 - [ ] Stop Times by Trip and Sequence

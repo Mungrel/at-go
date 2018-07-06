@@ -182,3 +182,39 @@ func TestStopsSearch(t *testing.T) {
 
 	assert.Equal(expected, stops)
 }
+
+func TestStopInfoByCode(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	stopInfos, err := mockATClient.StopInfoByCode(mockStopCode)
+	assert.Nil(err)
+	assert.NotNil(stopInfos)
+
+	expected := []*StopInfo{
+		{
+			TripID:         "2365121452-20180524131340_v66.89",
+			DepartureTime:  "07:50:00",
+			TripShortName:  "",
+			TripHeadsign:   "Manukau",
+			RouteLongName:  "Papakura Interchange To Manukau Bus Station Via Porchester",
+			RouteShortName: "365",
+			StopSequence:   1,
+			PickupType:     0,
+			DropOffType:    0,
+		},
+		{
+			TripID:         "1064099009-20180524131340_v66.89",
+			DepartureTime:  "07:50:00",
+			TripShortName:  "",
+			TripHeadsign:   "Otahuhu",
+			RouteLongName:  "Papakura Interchange To Otahuhu Station Via Great South Rd",
+			RouteShortName: "33",
+			StopSequence:   1,
+			PickupType:     0,
+			DropOffType:    0,
+		},
+	}
+
+	assert.Equal(expected, stopInfos)
+}

@@ -20,6 +20,7 @@ const (
 	mockRoutesShortName      = "STH"
 	mockNotificationCategory = "MOVED_STOP"
 	mockStopID               = "7004"
+	mockStopCode             = "2716"
 )
 
 type mockClient struct{}
@@ -132,6 +133,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/notifications/stop/"+mockStopID) {
 		return newOKResponse(getJSON(notificationsByStop)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/stops/stopinfo/"+mockStopCode) {
+		return newOKResponse(getJSON(stopInfoByCode)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")

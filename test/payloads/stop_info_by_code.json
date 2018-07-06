@@ -1,0 +1,28 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "trip_id": "2365121452-20180524131340_v66.89",
+            "departure_time": "07:50:00",
+            "trip_short_name": null,
+            "trip_headsign": "Manukau",
+            "route_long_name": "Papakura Interchange To Manukau Bus Station Via Porchester",
+            "route_short_name": "365",
+            "stop_sequence": 1,
+            "pickup_type": null,
+            "drop_off_type": null
+        },
+        {
+            "trip_id": "1064099009-20180524131340_v66.89",
+            "departure_time": "07:50:00",
+            "trip_short_name": null,
+            "trip_headsign": "Otahuhu",
+            "route_long_name": "Papakura Interchange To Otahuhu Station Via Great South Rd",
+            "route_short_name": "33",
+            "stop_sequence": 1,
+            "pickup_type": null,
+            "drop_off_type": null
+        }
+    ],
+    "error": null
+}
