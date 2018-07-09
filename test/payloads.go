@@ -18,6 +18,7 @@ const (
 	stopsByLocation         = "stops_by_location.json"
 	stopsSearch             = "stops_search.json"
 	stopInfoByCode          = "stop_info_by_code.json"
+	stopTimesByID           = "stop_times_by_id.json"
 	shapesByID              = "shapes_by_id.json"
 	shapeGeometryByID       = "shape_geometry_by_id.json"
 	trips                   = "trips.json"

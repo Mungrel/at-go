@@ -21,6 +21,7 @@ const (
 	mockNotificationCategory = "MOVED_STOP"
 	mockStopID               = "7004"
 	mockStopCode             = "2716"
+	mockStopTimeStopID       = "0097-20180524131340_v66.89"
 )
 
 type mockClient struct{}
@@ -137,6 +138,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/gtfs/stops/stopinfo/"+mockStopCode) {
 		return newOKResponse(getJSON(stopInfoByCode)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/stopTimes/stopId/"+mockStopTimeStopID) {
+		return newOKResponse(getJSON(stopTimesByID)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")
