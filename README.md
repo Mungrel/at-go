@@ -17,7 +17,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [x] Routes by Location
 - [x] Routes by Long Name
 - [x] Routes by Short Name
-- [ ] Routes by Stop
+- [x] Routes by Stop
 - [ ] Routes Id
 - [ ] Routes Search
 - [x] Shape geometry by Id

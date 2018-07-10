@@ -80,3 +80,17 @@ func (client *Client) RoutesByShortName(shortName string) ([]*Route, error) {
 
 	return response, nil
 }
+
+// RoutesByStopID gets a list of routes by stop ID from the AT GTFS API
+func (client *Client) RoutesByStopID(stopID string) ([]*Route, error) {
+	url := baseURL + "/v2/gtfs/routes/stopid/" + stopID
+
+	var response []*Route
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}
