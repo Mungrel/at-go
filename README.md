@@ -55,4 +55,4 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [ ] Combined Feed
 - [ ] Service Alerts
 - [ ] Trip Updates
-- [ ] Vehicle Positions
+- [x] Vehicle Positions

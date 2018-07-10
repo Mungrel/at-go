@@ -144,6 +144,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newOKResponse(getJSON(stopTimesByID)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/public/realtime/vehiclelocations") {
+		return newOKResponse(getJSON(vehiclePositions)), nil
+	}
+
 	return nil, errors.New("Endpoint not mocked")
 }
 

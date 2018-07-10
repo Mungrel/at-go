@@ -1,0 +1,57 @@
+{
+    "status": "OK",
+    "response": {
+        "header": {
+            "gtfs_realtime_version": "1.0",
+            "incrementality": 0,
+            "timestamp": 1531187764.58
+        },
+        "entity": [
+            {
+                "id": "55bf6023-47bb-450f-e04f-bd47bc627fa0",
+                "is_deleted": false,
+                "vehicle": {
+                    "trip": {
+                        "trip_id": "440136659-20180702170310_v67.28",
+                        "route_id": "06601-20180702170310_v67.28",
+                        "start_time": "13:30:00",
+                        "schedule_relationship": 0
+                    },
+                    "vehicle": {
+                        "id": "5A57"
+                    },
+                    "position": {
+                        "latitude": -36.91065,
+                        "longitude": 174.769567,
+                        "bearing": "102"
+                    },
+                    "timestamp": 1531187743.075,
+                    "occupancy_status": 0
+                }
+            },
+            {
+                "id": "870a00bb-13fa-8eb8-b951-6e821ca5d45b",
+                "is_deleted": false,
+                "vehicle": {
+                    "trip": {
+                        "trip_id": "473136639-20180702170310_v67.28",
+                        "route_id": "02705-20180702170310_v67.28",
+                        "start_time": "13:25:00",
+                        "schedule_relationship": 0
+                    },
+                    "vehicle": {
+                        "id": "2CB2"
+                    },
+                    "position": {
+                        "latitude": -36.865117,
+                        "longitude": 174.76055,
+                        "bearing": "320"
+                    },
+                    "timestamp": 1531187742.574,
+                    "occupancy_status": 1
+                }
+            }
+        ]
+    },
+    "error": null
+}

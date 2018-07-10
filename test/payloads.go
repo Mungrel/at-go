@@ -31,6 +31,7 @@ const (
 	notifications           = "notifications.json"
 	notificationsByCategory = "notifications_by_category.json"
 	notificationsByStop     = "notifications_by_stop.json"
+	vehiclePositions        = "vehicle_positions.json"
 )
 
 func getJSON(fileName string) string {
