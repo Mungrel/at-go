@@ -152,6 +152,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newOKResponse(getJSON(routesByStopID)), nil
 	}
 
+	if strings.HasSuffix(url, "/v2/gtfs/routes/routeId/"+mockRouteID) {
+		return newOKResponse(getJSON(routesByID)), nil
+	}
+
 	return nil, errors.New("Endpoint not mocked")
 }
 
