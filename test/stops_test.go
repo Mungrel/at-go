@@ -129,7 +129,7 @@ func TestStopsSearch(t *testing.T) {
 	mockATClient := newMockClient()
 	assert := assert.New(t)
 
-	stops, err := mockATClient.StopsSearch(mockStopsSearchTerm)
+	stops, err := mockATClient.StopsSearch(mockSearchTerm)
 	assert.Nil(err)
 	assert.NotNil(stops)
 

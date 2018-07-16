@@ -15,7 +15,7 @@ const (
 	mockTripID               = "98302-20180524131340_v66.89"
 	mockShapeID              = "81-20180605110613_v67.1"
 	mockShapeGeomID          = "813-20180524131340_v66.89"
-	mockStopsSearchTerm      = "Papakura"
+	mockSearchTerm           = "Papakura"
 	mockRoutesLongName       = "Papakura Train Station to Britomart Train Station"
 	mockRoutesShortName      = "STH"
 	mockNotificationCategory = "MOVED_STOP"
@@ -104,7 +104,7 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 		return newOKResponse(getJSON(stopsByLocation)), nil
 	}
 
-	if strings.HasSuffix(url, "/v2/gtfs/stops/search/"+mockStopsSearchTerm) {
+	if strings.HasSuffix(url, "/v2/gtfs/stops/search/"+mockSearchTerm) {
 		return newOKResponse(getJSON(stopsSearch)), nil
 	}
 
@@ -154,6 +154,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/gtfs/routes/routeId/"+mockRouteID) {
 		return newOKResponse(getJSON(routesByID)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/routes/search/"+mockSearchTerm) {
+		return newOKResponse(getJSON(routesSearch)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")

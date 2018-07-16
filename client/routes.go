@@ -108,3 +108,17 @@ func (client *Client) RoutesByID(routeID string) ([]*Route, error) {
 
 	return response, nil
 }
+
+// RoutesSearch gets a list of routes by a search term from the AT GTFS API
+func (client *Client) RoutesSearch(searchTerm string) ([]*Route, error) {
+	url := baseURL + "/v2/gtfs/routes/search/" + searchTerm
+
+	var response []*Route
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}

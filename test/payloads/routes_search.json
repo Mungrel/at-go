@@ -1,0 +1,28 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "route_id": "37101-20180702170310_v67.28",
+            "agency_id": "RTH",
+            "route_short_name": "371",
+            "route_long_name": "Takanini Station To Papakura Interchange",
+            "route_desc": null,
+            "route_type": 3,
+            "route_url": null,
+            "route_color": null,
+            "route_text_color": null
+        },
+        {
+            "route_id": "05555-20180524131340_v66.89",
+            "agency_id": "RTH",
+            "route_short_name": "055",
+            "route_long_name": "Papakura To McAuley High",
+            "route_desc": null,
+            "route_type": 3,
+            "route_url": null,
+            "route_color": null,
+            "route_text_color": null
+        }
+    ],
+    "error": null
+}
