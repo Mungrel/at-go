@@ -24,6 +24,7 @@ const (
 	stopTimesByID           = "stop_times_by_id.json"
 	shapesByID              = "shapes_by_id.json"
 	shapeGeometryByID       = "shape_geometry_by_id.json"
+	shapesByTrip            = "shapes_by_trip.json"
 	trips                   = "trips.json"
 	tripsByID               = "trips_by_id.json"
 	tripsByRouteID          = "trips_by_route_id.json"

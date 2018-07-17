@@ -34,3 +34,31 @@ func TestShapesByID(t *testing.T) {
 
 	assert.Equal(expected, shapes)
 }
+
+func TestShapesByTrip(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	shapes, err := mockATClient.ShapesByTrip(mockShapeTripID)
+	assert.Nil(err)
+	assert.NotNil(shapes)
+
+	expected := []*Shape{
+		{
+			ID:                "854-20180524131340_v66.89",
+			PointLat:          -37.06496,
+			PointLong:         174.9463,
+			PointSequence:     1,
+			DistanceTravelled: 0.0,
+		},
+		{
+			ID:                "854-20180524131340_v66.89",
+			PointLat:          -37.06496,
+			PointLong:         174.9463,
+			PointSequence:     2,
+			DistanceTravelled: 0.0,
+		},
+	}
+
+	assert.Equal(expected, shapes)
+}

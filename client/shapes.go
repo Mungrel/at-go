@@ -22,3 +22,17 @@ func (client *Client) ShapesByID(shapeID string) ([]*Shape, error) {
 
 	return response, nil
 }
+
+// ShapesByTrip gets a list of Shapes, filtered by Trip ID from the AT GTFS API
+func (client *Client) ShapesByTrip(tripID string) ([]*Shape, error) {
+	url := baseURL + "/v2/gtfs/shapes/tripId/" + tripID
+
+	var response []*Shape
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}

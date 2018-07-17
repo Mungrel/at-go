@@ -15,6 +15,7 @@ const (
 	mockTripID               = "98302-20180524131340_v66.89"
 	mockShapeID              = "81-20180605110613_v67.1"
 	mockShapeGeomID          = "813-20180524131340_v66.89"
+	mockShapeTripID          = "2365121452-20180524131340_v66.89"
 	mockSearchTerm           = "Papakura"
 	mockRoutesLongName       = "Papakura Train Station to Britomart Train Station"
 	mockRoutesShortName      = "STH"
@@ -158,6 +159,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/gtfs/routes/search/"+mockSearchTerm) {
 		return newOKResponse(getJSON(routesSearch)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/shapes/tripId/"+mockShapeTripID) {
+		return newOKResponse(getJSON(shapesByTrip)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")
