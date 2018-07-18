@@ -23,7 +23,7 @@ Always keen to take contributions. Check out [Contributing](https://github.com/M
 - [x] Shape geometry by Id
 - [x] Shapes by Id
 - [x] Shapes by Trip
-- [ ] Stop by Code
+- [x] Stop by Code
 - [ ] Stop by Id
 - [ ] Stop by Trip
 - [x] Stop Info By Code

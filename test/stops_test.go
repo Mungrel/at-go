@@ -183,6 +183,42 @@ func TestStopsSearch(t *testing.T) {
 	assert.Equal(expected, stops)
 }
 
+func TestStopsByCode(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	stops, err := mockATClient.StopsByCode(mockStopCode)
+	assert.Nil(err)
+	assert.NotNil(stops)
+
+	expected := []*Stop{
+		{
+			ID:                 "2716-20180702170310_v67.28",
+			Name:               "Papakura Train Station",
+			Description:        "",
+			Latitude:           -37.06496,
+			Longitude:          174.9463,
+			ZoneID:             "merged_91",
+			URL:                "",
+			Code:               "2716",
+			Street:             "",
+			City:               "",
+			Region:             "",
+			PostCode:           "",
+			Country:            "",
+			LocationType:       0,
+			ParentStation:      "51012-20180702170310_v67.28",
+			Timezone:           "",
+			WheelchairBoarding: "",
+			Direction:          "",
+			Position:           "",
+			Geom:               "0101000020E61000008E06F01648DE65402AC6F99B508842C0",
+		},
+	}
+
+	assert.Equal(expected, stops)
+}
+
 func TestStopInfoByCode(t *testing.T) {
 	mockATClient := newMockClient()
 	assert := assert.New(t)
