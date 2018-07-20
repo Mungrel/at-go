@@ -1,0 +1,28 @@
+{
+    "status": "OK",
+    "response": [
+        {
+            "stop_id": "0097-20180524131340_v66.89",
+            "stop_name": "Papakura Train Station",
+            "stop_desc": null,
+            "stop_lat": -37.06429,
+            "stop_lon": 174.94611,
+            "zone_id": "merged_90",
+            "stop_url": null,
+            "stop_code": "97",
+            "stop_street": null,
+            "stop_city": null,
+            "stop_region": null,
+            "stop_postcode": null,
+            "stop_country": null,
+            "location_type": 0,
+            "parent_station": null,
+            "stop_timezone": null,
+            "wheelchair_boarding": null,
+            "direction": null,
+            "position": null,
+            "the_geom": "0101000020E6100000658D7A8846DE6540DCBA9BA73A8842C0"
+        }
+    ],
+    "error": null
+}

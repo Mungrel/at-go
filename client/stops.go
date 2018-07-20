@@ -44,6 +44,20 @@ func (client *Client) Stops() ([]*Stop, error) {
 	return response, nil
 }
 
+// StopsByID gets a list of stops, filtered by stop ID from the AT GTFS API
+func (client *Client) StopsByID(stopID string) ([]*Stop, error) {
+	url := baseURL + "/v2/gtfs/stops/stopId/" + stopID
+
+	var response []*Stop
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}
+
 // StopsByLocation gets a list of stops within the radius of a point from the AT GTFS API
 func (client *Client) StopsByLocation(latitude, longitude, radius float64) ([]*Stop, error) {
 	params := url.Values{}
