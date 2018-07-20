@@ -25,6 +25,7 @@ const (
 	stopInfoByCode          = "stop_info_by_code.json"
 	stopByCode              = "stops_by_code.json"
 	stopTimesByID           = "stop_times_by_id.json"
+	stopTimesByTrip         = "stop_times_by_trip.json"
 	shapesByID              = "shapes_by_id.json"
 	shapeGeometryByID       = "shape_geometry_by_id.json"
 	shapesByTrip            = "shapes_by_trip.json"

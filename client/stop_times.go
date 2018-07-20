@@ -29,3 +29,17 @@ func (client *Client) StopTimesByID(stopID string) ([]*StopTime, error) {
 
 	return response, nil
 }
+
+// StopTimesByTripID gets a list of stop times, filtered by trip ID, from the AT GTFS API
+func (client *Client) StopTimesByTripID(tripID string) ([]*StopTime, error) {
+	url := baseURL + "/v2/gtfs/stopTimes/tripId/" + tripID
+
+	var response []*StopTime
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}
