@@ -101,6 +101,64 @@ func TestStopsByID(t *testing.T) {
 	assert.Equal(expected, stops)
 }
 
+func TestStopsByTripID(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	stops, err := mockATClient.StopsByTripID(mockStopTripID)
+	assert.Nil(err)
+	assert.NotNil(stops)
+
+	expected := []*Stop{
+		{
+			ID:                 "2716-20180524131340_v66.89",
+			Name:               "Papakura Train Station",
+			Description:        "",
+			Latitude:           -37.06496,
+			Longitude:          174.9463,
+			ZoneID:             "merged_90",
+			URL:                "",
+			Code:               "2716",
+			Street:             "",
+			Region:             "",
+			City:               "",
+			PostCode:           "",
+			Country:            "",
+			LocationType:       0,
+			ParentStation:      "51012-20180524131340_v66.89",
+			Timezone:           "",
+			WheelchairBoarding: "",
+			Direction:          "",
+			Position:           "",
+			Geom:               "0101000020E61000008E06F01648DE65402AC6F99B508842C0",
+		},
+		{
+			ID:                 "2553-20180524131340_v66.89",
+			Name:               "Railway St outside Countdown",
+			Description:        "",
+			Latitude:           -37.06365,
+			Longitude:          174.94492,
+			ZoneID:             "merged_90",
+			URL:                "",
+			Code:               "2553",
+			Street:             "",
+			Region:             "",
+			City:               "",
+			PostCode:           "",
+			Country:            "",
+			LocationType:       0,
+			ParentStation:      "51614-20180524131340_v66.89",
+			Timezone:           "",
+			WheelchairBoarding: "",
+			Direction:          "",
+			Position:           "",
+			Geom:               "0101000020E6100000C32ADEC83CDE6540F931E6AE258842C0",
+		},
+	}
+
+	assert.Equal(expected, stops)
+}
+
 func TestStopsByLocation(t *testing.T) {
 	mockATClient := newMockClient()
 	assert := assert.New(t)

@@ -21,6 +21,7 @@ const (
 	mockRoutesShortName      = "STH"
 	mockNotificationCategory = "MOVED_STOP"
 	mockStopID               = "7004"
+	mockStopTripID           = "2365121452-20180524131340_v66.89"
 	mockStopCode             = "2716"
 	mockStopTimeStopID       = "0097-20180524131340_v66.89"
 )
@@ -171,6 +172,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/gtfs/stops/stopId/"+mockStopTimeStopID) {
 		return newOKResponse(getJSON(stopsByID)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/stops/tripId/"+mockStopTripID) {
+		return newOKResponse(getJSON(stopsByTrip)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")
