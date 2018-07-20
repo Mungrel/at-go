@@ -1,5 +1,7 @@
 package client
 
+import "strconv"
+
 // StopTime represents a stop time in the AT GTFS API
 type StopTime struct {
 	TripID                 string  `json:"trip_id"`
@@ -33,6 +35,20 @@ func (client *Client) StopTimesByID(stopID string) ([]*StopTime, error) {
 // StopTimesByTripID gets a list of stop times, filtered by trip ID, from the AT GTFS API
 func (client *Client) StopTimesByTripID(tripID string) ([]*StopTime, error) {
 	url := baseURL + "/v2/gtfs/stopTimes/tripId/" + tripID
+
+	var response []*StopTime
+	err := client.get(url, &response)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}
+
+// StopTimesByTripIDAndSequence gets a list of stop times, filtered by trip ID and stop sequence, from the AT GTFS API
+func (client *Client) StopTimesByTripIDAndSequence(tripID string, stopSequence int) ([]*StopTime, error) {
+	url := baseURL + "/v2/gtfs/stopTimes/tripId/" + tripID + "/stopSequence/" + strconv.Itoa(stopSequence)
 
 	var response []*StopTime
 	err := client.get(url, &response)

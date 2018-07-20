@@ -90,3 +90,31 @@ func TestStopTimesByTripID(t *testing.T) {
 
 	assert.Equal(expected, stopTimes)
 }
+
+func TestStopTimesByTripIDAndSequence(t *testing.T) {
+	mockATClient := newMockClient()
+	assert := assert.New(t)
+
+	stopTimes, err := mockATClient.StopTimesByTripIDAndSequence(mockStopTripID, mockStopSequence)
+	assert.Nil(err)
+	assert.NotNil(stopTimes)
+
+	expected := []*StopTime{
+		{
+			TripID:                 "2365121452-20180524131340_v66.89",
+			ArrivalTime:            "07:50:00",
+			DepartureTime:          "07:50:00",
+			StopID:                 "2716-20180524131340_v66.89",
+			StopSequence:           1,
+			StopHeadsign:           "",
+			PickupType:             0,
+			DropoffType:            0,
+			ShapeDistanceTravelled: 0.0,
+			Timepoint:              "",
+			ArrivalTimeSeconds:     28200,
+			DepartureTimeSeconds:   28200,
+		},
+	}
+
+	assert.Equal(expected, stopTimes)
+}

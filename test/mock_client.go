@@ -4,6 +4,7 @@ import (
 	"errors"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 	"strings"
 
 	at "github.com/Mungrel/at-go/client"
@@ -21,6 +22,7 @@ const (
 	mockRoutesShortName      = "STH"
 	mockNotificationCategory = "MOVED_STOP"
 	mockStopID               = "7004"
+	mockStopSequence         = 1
 	mockStopTripID           = "2365121452-20180524131340_v66.89"
 	mockStopCode             = "2716"
 	mockStopTimeStopID       = "0097-20180524131340_v66.89"
@@ -180,6 +182,10 @@ func (mc *mockClient) Do(req *http.Request) (*http.Response, error) {
 
 	if strings.HasSuffix(url, "/v2/gtfs/stopTimes/tripId/"+mockStopTripID) {
 		return newOKResponse(getJSON(stopTimesByTrip)), nil
+	}
+
+	if strings.HasSuffix(url, "/v2/gtfs/stopTimes/tripId/"+mockStopTripID+"/stopSequence/"+strconv.Itoa(mockStopSequence)) {
+		return newOKResponse(getJSON(stopTimesByTripAndSequence)), nil
 	}
 
 	return nil, errors.New("Endpoint not mocked")
